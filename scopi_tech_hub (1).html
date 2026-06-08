@@ -202,7 +202,7 @@
     .tag1 { top: -18px; right: -30px; animation: float 3s ease-in-out infinite; }
     .tag2 { bottom: 20px; left: -40px; animation: float 3s 1.5s ease-in-out infinite; }
 
-    /* SERVICES */
+    /* SERVICES & PRODUCTS MODERN GRID (kniezOn Style Showcase) */
     .section {
       padding: 96px 6vw;
     }
@@ -222,85 +222,102 @@
       line-height: 1.7; font-weight: 300; margin-bottom: 56px;
     }
 
-    .services-grid {
+    .tech-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
-    .service-card {
+    .tech-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 36px 30px;
       border: 1px solid var(--light);
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: default;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
       animation: fadeUp 0.6s ease both;
     }
-    .service-card:hover {
+    .tech-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.09);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
     }
-    .service-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 22px;
+    .card-image {
+      width: 100%;
+      height: 160px;
+      background-color: #f3f0ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
     }
-    .icon-red { background: #fff0ed; }
-    .icon-blue { background: #eef3ff; }
-    .icon-green { background: #edfff5; }
-    .service-card h3 {
+    .card-content {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      align-self: flex-start;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-software { background: #fff0ed; color: var(--accent); }
+    .badge-hardware { background: #eef3ff; color: var(--accent2); }
+    .badge-accessory { background: #edfff5; color: #15803d; }
+    
+    .card-title {
       font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.08rem;
-      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin: 0 0 8px 0;
     }
-    .service-card p {
-      font-size: 0.88rem; color: var(--mid);
-      line-height: 1.65;
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.5;
+      margin-bottom: 16px;
     }
-    .service-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 20px;
-      font-size: 0.85rem; font-weight: 500;
-      color: var(--ink); text-decoration: none;
-      transition: gap 0.2s;
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .service-link:hover { gap: 10px; }
-
-    /* PRODUCTS */
-    .products-bg { background: var(--white); }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+    .card-price {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--ink);
     }
-    .product-card {
-      background: var(--bg);
-      border-radius: var(--radius);
-      padding: 28px 20px;
+    .order-btn {
+      background: #25D366;
+      color: white;
       text-align: center;
-      border: 1px solid var(--light);
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
+      padding: 12px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s ease, transform 0.1s;
     }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      background: var(--white);
+    .order-btn:hover {
+      background: #20ba59;
+      transform: scale(1.02);
     }
-    .product-emoji { font-size: 2.6rem; margin-bottom: 14px; display: block; }
-    .product-card h4 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-    .product-card p { font-size: 0.82rem; color: var(--mid); margin-bottom: 14px; }
-    .product-price {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1rem;
-      color: var(--accent);
-    }
+
+    /* PRODUCTS SPECIFIC STYLE RE-ADJUSTMENTS */
+    .products-bg { background: var(--white); }
+    .products-bg .card-image { background-color: var(--bg); }
 
     /* WHY US */
     .why-grid {
@@ -376,6 +393,10 @@
     .contact-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: start;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
     }
     .contact-item {
       display: flex; gap: 16px; align-items: flex-start;
@@ -472,8 +493,6 @@
       .hero p { margin-left: auto; margin-right: auto; }
       .hero-actions { justify-content: center; }
       .hero-visual { display: none; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .products-grid { grid-template-columns: 1fr 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -497,8 +516,6 @@
       }
     }
     @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .products-grid { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       .stats-panel { grid-template-columns: 1fr; }
@@ -550,106 +567,226 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION (kniezOn Grid Layout) -->
 <section class="section" id="services">
   <p class="section-label">What We Do</p>
   <h2 class="section-title">Expert Services<br/>You Can Trust</h2>
   <p class="section-sub">From software unlocking to full OS restoration — we handle it all with speed, precision, and a satisfaction guarantee.</p>
 
-  <div class="services-grid">
-    <div class="service-card" style="animation-delay:0.1s">
-      <div class="service-icon icon-red">🔓</div>
-      <h3>Software Unlocking</h3>
-      <p>Network unlock any phone — iPhone, Samsung, Tecno, Infinix, and more. Fast, safe, and permanent.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+  <div class="tech-grid">
+    <!-- Card 1 -->
+    <div class="tech-card" style="animation-delay:0.1s">
+      <div class="card-image">🔓</div>
+      <div class="card-content">
+        <span class="card-badge badge-software">Software</span>
+        <h3 class="card-title">Software Unlocking</h3>
+        <p class="card-desc">Network unlock any phone — iPhone, Samsung, Tecno, Infinix, and more. Fast, safe, and permanent solutions.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20to%20inquire%20about%20your%20Software%20Unlocking%20service." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="service-card" style="animation-delay:0.2s">
-      <div class="service-icon icon-blue">💾</div>
-      <h3>OS Flashing & Restore</h3>
-      <p>Bricked phone? We flash firmware, restore factory software, and recover your device like new.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+    <!-- Card 2 -->
+    <div class="tech-card" style="animation-delay:0.2s">
+      <div class="card-image">💾</div>
+      <div class="card-content">
+        <span class="card-badge badge-software">OS & Flashing</span>
+        <h3 class="card-title">OS Flashing & Restore</h3>
+        <p class="card-desc">Bricked phone or bootloop issues? We flash firmware, install operating systems, and restore your system like new.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20to%20inquire%20about%20OS%20Flashing%20%26%20Restore%20services." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="service-card" style="animation-delay:0.3s">
-      <div class="service-icon icon-green">🛡️</div>
-      <h3>Virus & Malware Removal</h3>
-      <p>Deep-clean your phone from spyware, bloatware, and malicious apps affecting performance.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+    <!-- Card 3 -->
+    <div class="tech-card" style="animation-delay:0.3s">
+      <div class="card-image">🛡️</div>
+      <div class="card-content">
+        <span class="card-badge badge-hardware">Security</span>
+        <h3 class="card-title">Virus & Malware Removal</h3>
+        <p class="card-desc">Deep-clean systems from spyware, pesky bloatware, and harmful scripts or performance vulnerabilities.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20my%20device%20needs%20Virus%20%26%20Malware%20Removal." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="service-card" style="animation-delay:0.4s">
-      <div class="service-icon icon-blue">📲</div>
-      <h3>App Installation & Setup</h3>
-      <p>Premium app installs, Google Play fixes, account setup, and full device configuration.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+    <!-- Card 4 -->
+    <div class="tech-card" style="animation-delay:0.4s">
+      <div class="card-image">📲</div>
+      <div class="card-content">
+        <span class="card-badge badge-software">Configuration</span>
+        <h3 class="card-title">App Installation & Setup</h3>
+        <p class="card-desc">Premium app installs, custom system engines, digital utility setups, and complete device optimization profiles.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20need%20help%20with%20App%20Installation%20%26%20Setup." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="service-card" style="animation-delay:0.5s">
-      <div class="service-icon icon-red">🔄</div>
-      <h3>Data Backup & Transfer</h3>
-      <p>Safely migrate contacts, photos, and files between devices with zero data loss.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+    <!-- Card 5 -->
+    <div class="tech-card" style="animation-delay:0.5s">
+      <div class="card-image">🔄</div>
+      <div class="card-content">
+        <span class="card-badge badge-hardware">Data Care</span>
+        <h3 class="card-title">Data Backup & Transfer</h3>
+        <p class="card-desc">Safely migrate contacts, messages, directories, media assets, and key tools with absolute security.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20securely%20Backup%20or%20Transfer%20my%20Data." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="service-card" style="animation-delay:0.6s">
-      <div class="service-icon icon-green">⚙️</div>
-      <h3>Performance Optimization</h3>
-      <p>Speed up sluggish phones — clear system junk, optimize RAM, and extend battery life.</p>
-      <a class="service-link" href="#contact">Book now →</a>
+    <!-- Card 6 -->
+    <div class="tech-card" style="animation-delay:0.6s">
+      <div class="card-image">⚙️</div>
+      <div class="card-content">
+        <span class="card-badge badge-hardware">Optimization</span>
+        <h3 class="card-title">Performance Tuning</h3>
+        <p class="card-desc">Speed up older or sluggish hardware structures. Clean layout cache, optimize RAM blocks, and maximize utility.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20optimize%20my%20device%20Performance." class="order-btn" target="_blank">
+            💬 Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCTS/ACCESSORIES SECTION (kniezOn Grid Layout) -->
 <section class="section products-bg" id="products">
   <p class="section-label">Accessories</p>
   <h2 class="section-title">Top Picks in Store</h2>
   <p class="section-sub">Quality accessories for every phone and every budget. All products tested and verified.</p>
 
-  <div class="products-grid">
-    <div class="product-card">
-      <span class="product-emoji">🔋</span>
-      <h4>Charging Cables</h4>
-      <p>USB-C, Lightning & Micro USB</p>
-      <div class="product-price">From UGX 5,000</div>
+  <div class="tech-grid">
+    <!-- Item 1 -->
+    <div class="tech-card">
+      <div class="card-image">🔋</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Cables</span>
+        <h3 class="card-title">Charging Cables</h3>
+        <p class="card-desc">Heavy duty premium USB-C, Lightning, and Micro USB cables built to endure daily use.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 5,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20to%20order%20Charging%20Cables." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">🎧</span>
-      <h4>Earphones & Buds</h4>
-      <p>Wired & wireless options</p>
-      <div class="product-price">From UGX 15,000</div>
+    <!-- Item 2 -->
+    <div class="tech-card">
+      <div class="card-image">🎧</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Audio</span>
+        <h3 class="card-title">Earphones & Buds</h3>
+        <p class="card-desc">Crystal clear acoustics. High fidelity wired headsets and wireless sleek Bluetooth earbud alternatives.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 15,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'm%20interested%20in%20Earphones%20%26%20Buds." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">🔌</span>
-      <h4>Charger Adapters</h4>
-      <p>Fast charge & standard</p>
-      <div class="product-price">From UGX 10,000</div>
+    <!-- Item 3 -->
+    <div class="tech-card">
+      <div class="card-image">🔌</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Power</span>
+        <h3 class="card-title">Charger Adapters</h3>
+        <p class="card-desc">Fast charging intelligent power bricks with voltage spike guards for stable, optimized power cycles.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 10,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20a%20Charger%20Adapter." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">🛡️</span>
-      <h4>Screen Protectors</h4>
-      <p>Tempered glass, all models</p>
-      <div class="product-price">From UGX 8,000</div>
+    <!-- Item 4 -->
+    <div class="tech-card">
+      <div class="card-image">🛡️</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Screen Protection</span>
+        <h3 class="card-title">Screen Protectors</h3>
+        <p class="card-desc">Ultra impact-resistant tempered glass layer armor engineered specifically to custom match all model panels.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 8,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20need%20a%20Screen%20Protector." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">📦</span>
-      <h4>Phone Cases</h4>
-      <p>Silicone, leather & hard-shell</p>
-      <div class="product-price">From UGX 12,000</div>
+    <!-- Item 5 -->
+    <div class="tech-card">
+      <div class="card-image">📦</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Cases</span>
+        <h3 class="card-title">Phone Cases</h3>
+        <p class="card-desc">Sturdy shock-absorbent transparent liquid silicones, modern leather flips, and hard rugged tactical setups.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 12,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'm%20looking%20for%20a%20Phone%20Case." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">🔋</span>
-      <h4>Power Banks</h4>
-      <p>10,000mAh – 30,000mAh</p>
-      <div class="product-price">From UGX 45,000</div>
+    <!-- Item 6 -->
+    <div class="tech-card">
+      <div class="card-image">🔋</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Power Banks</span>
+        <h3 class="card-title">Power Banks</h3>
+        <p class="card-desc">High capacity mobile power reserves ranging from 10,000mAh up to 30,000mAh for continuous operations.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 45,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20order%20a%20Power%20Bank." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">📡</span>
-      <h4>Bluetooth Speakers</h4>
-      <p>Portable & mini-series</p>
-      <div class="product-price">From UGX 35,000</div>
+    <!-- Item 7 -->
+    <div class="tech-card">
+      <div class="card-image">📡</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Audio</span>
+        <h3 class="card-title">Bluetooth Speakers</h3>
+        <p class="card-desc">Loud acoustic portable travel stereos with reliable deep base configurations and wide connectivity.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 35,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20to%20buy%20a%20Bluetooth%20Speaker." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <span class="product-emoji">🖥️</span>
-      <h4>Phone Holders & Stands</h4>
-      <p>Car mounts, desk & ring stands</p>
-      <div class="product-price">From UGX 7,000</div>
+    <!-- Item 8 -->
+    <div class="tech-card">
+      <div class="card-image">🖥️</div>
+      <div class="card-content">
+        <span class="card-badge badge-accessory">Mounts</span>
+        <h3 class="card-title">Phone Holders & Stands</h3>
+        <p class="card-desc">Secure vacuum windshield car mounts, stable desk frames, and sleek rotational ring structures.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 7,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'm%20interested%20in%20Phone%20Holders%20%26%20Stands." class="order-btn" target="_blank">
+            🛒 Buy on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -798,16 +935,16 @@
         <div class="form-row">
           <div class="form-field">
             <label>Your Name</label>
-            <input type="text" placeholder="e.g. John Doe" />
+            <input type="text" id="clientName" placeholder="e.g. John Doe" />
           </div>
           <div class="form-field">
             <label>Phone Number</label>
-            <input type="tel" placeholder="+256 700 000 000" />
+            <input type="tel" id="clientPhone" placeholder="+256 700 000 000" />
           </div>
         </div>
         <div class="form-field">
           <label>Service Needed</label>
-          <select>
+          <select id="clientService">
             <option>Software Unlocking</option>
             <option>OS Flashing & Restore</option>
             <option>Virus Removal</option>
@@ -819,9 +956,9 @@
         </div>
         <div class="form-field">
           <label>Message</label>
-          <textarea placeholder="Describe your phone issue or what you need…"></textarea>
+          <textarea id="clientMessage" placeholder="Describe your phone issue or what you need…"></textarea>
         </div>
-        <button class="btn-submit">Send Message →</button>
+        <button class="btn-submit" onclick="sendFormToWhatsApp()">Send Message via WhatsApp →</button>
       </div>
     </div>
   </div>
@@ -885,6 +1022,23 @@
       menuToggle.textContent = '☰';
     });
   });
+
+  // Contact Form redirection to WhatsApp
+  function sendFormToWhatsApp() {
+    const businessNumber = "256759793746";
+    const name = document.getElementById('clientName').value.trim();
+    const phone = document.getElementById('clientPhone').value.trim();
+    const service = document.getElementById('clientService').value;
+    const message = document.getElementById('clientMessage').value.trim();
+
+    if(!name || !message) {
+      alert("Please fill in your Name and Message details so we can assist you!");
+      return;
+    }
+
+    const textPayload = `Hello Scopi Tech Hub!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service Required:* ${encodeURIComponent(service)}%0A*Issue Details:* ${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/${businessNumber}?text=${textPayload}`, '_blank');
+  }
 </script>
 
 </body>
