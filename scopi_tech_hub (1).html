@@ -4,33 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <title>Scopi Tech Hub | Premium Phone Spares & Repair Tools</title>
-  <meta name="description" content="Expert phone software repair, premium replacement screens, and flashing tools at Scopi Tech Hub in Kampala." />
+  <!-- SEO Optimization -->
+  <title>Scopi Tech Hub | Phone Spares, Software Repair & Accessories Kampala</title>
+  <meta name="description" content="Expert phone software repair, premium replacement screens, flashing tools, and mobile accessories at Scopi Tech Hub in Kampala, Uganda." />
+  <meta name="keywords" content="phone repair Kampala, phone spares Uganda, original screen replacement, phone flashing, network unlock, Kniezon alternative, Scopi Tech Hub" />
+  <meta name="author" content="Scopi Tech Hub" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Google Fonts: Inter for that clean, modern e-commerce interface -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Open Graph for Social Media/WhatsApp Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SCOPI TECH HUB | Premium Phone Spares & Software Repair" />
+  <meta property="og:description" content="Get original screens, professional system flashing, network unlocking, and accessories in Kampala." />
+  <meta property="og:url" content="https://yourusername.github.io/your-repository-name/" />
+
+  <!-- Google Fonts updated to match the clean digital storefront aesthetic -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --dark-navy: #111625;      /* Exact background color from Kniezon header/banner */
-      --darker-navy: #0b0e17;    /* Deep background for the product sections */
-      --top-bar-bg: #f5f5f7;     /* Light announcement bar */
-      --accent-orange: #f97316;  /* Orange branding hue */
-      --accent-cyan: #06b6d4;    /* Cyan branding hue */
+      --bg: #0b0e17;              /* Deep background for lower sections */
+      --dark-navy: #111625;        /* Exact premium dark color from Kniezon header/banner */
       --white: #ffffff;
-      --text-muted: #94a3b8;
-      --border-dark: #1e293b;
+      --ink: #ffffff;
+      --mid: #94a3b8;             /* Muted gray text color */
+      --light: #1e293b;           /* Dark borders */
+      --accent: #f97316;          /* Precise brand Orange accent from screenshot */
+      --accent-cyan: #06b6d4;     /* Precise brand Cyan accent from screenshot */
+      --card: #111625;
+      --top-bar-bg: #f5f5f7;      /* Clean light announcement strip */
+      --radius: 12px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--darker-navy);
+      background: var(--bg);
       color: var(--white);
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 1. TOP ANNOUNCEMENT BAR */
+    /* TOP ANNOUNCEMENT STRIP FROM IMG_20260609_004811_536.jpg.jpg */
     .top-announcement {
       background: var(--top-bar-bg);
       color: #1c1c1e;
@@ -39,528 +54,645 @@
       font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.03em;
-    }
-
-    /* 2. MAIN HEADER (MATCHING THE IMAGE STRUCTURE) */
-    header {
-      background: var(--dark-navy);
-      padding: 20px 6vw 10px 6vw;
-    }
-    .header-main {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      width: 100%;
+      z-index: 101;
       position: relative;
     }
-    
-    .header-left .search-trigger {
+
+    .mobile-menu-toggle {
+      display: none;
       background: none;
       border: none;
-      color: var(--white);
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      opacity: 0.85;
-      transition: opacity 0.2s;
-    }
-    .header-left .search-trigger:hover { opacity: 1; }
-
-    /* Centered Branding Logo */
-    .brand-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.6rem;
       color: var(--white);
-      letter-spacing: -0.04em;
-    }
-    .brand-logo .logo-symbol {
-      color: var(--accent-cyan);
-      font-style: normal;
-    }
-    .brand-logo span {
-      color: var(--accent-orange);
     }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-    .header-icon-btn {
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.2rem;
-      cursor: pointer;
-      opacity: 0.85;
-      text-decoration: none;
-    }
-    .header-icon-btn:hover { opacity: 1; }
-
-    /* 3. CENTERED NAVIGATION MENU */
-    .main-nav {
+    /* NAVIGATION - CONVERTED TO PREMIUM STYLED HEADER STRIP */
+    nav {
+      position: sticky; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; flex-direction: column;
       background: var(--dark-navy);
-      padding: 15px 20px 20px 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-      flex-wrap: wrap;
+    .nav-main-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 6vw 10px 6vw;
+      width: 100%;
+      position: relative;
+    }
+    .logo {
+      font-weight: 900; font-size: 1.5rem;
+      letter-spacing: -0.04em; color: var(--white);
+      text-decoration: none;
+    }
+    .logo i { color: var(--accent-cyan); font-style: normal; }
+    .logo span { color: var(--accent); }
+    
+    /* Inline structured links centered beneath the logo block */
+    .nav-links { 
+      display: flex; justify-content: center; gap: 28px; list-style: none; 
+      padding: 15px 20px 20px 20px; width: 100%;
     }
     .nav-links a {
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 0.8rem; font-weight: 600; color: rgba(255, 255, 255, 0.75);
+      text-decoration: none; transition: color 0.2s; text-transform: uppercase;
+      letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;
     }
-    .nav-links a:hover {
-      color: var(--white);
-    }
-    .nav-links .dropdown-arrow {
-      font-size: 0.6rem;
-      opacity: 0.7;
-    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .dropdown-arrow { font-size: 0.6rem; opacity: 0.7; }
 
-    /* 4. EXACT HERO BANNER DESIGN FROM THE IMAGE */
-    .hero-banner {
-      background: var(--dark-navy);
-      padding: 60px 8vw;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-      position: relative;
-      overflow: hidden;
+    .nav-cta {
+      background: #facc15; color: #111625; /* Yellow button accents */
+      padding: 10px 22px; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 700; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
     }
-    .hero-left {
-      z-index: 2;
+    .nav-cta:hover { background: #eab308; transform: translateY(-1px); }
+
+    /* HERO SECTION WITH SPLIT LAYOUT DESIGNS */
+    .hero {
+      min-height: 85vh;
+      display: grid; grid-template-columns: 1.2fr 0.8fr;
+      align-items: center; padding: 60px 6vw; gap: 60px;
+      position: relative; overflow: hidden;
+      background: var(--dark-navy);
+    }
+    .hero-text { position: relative; z-index: 1; animation: fadeUp 0.8s ease both; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--light);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 500; color: var(--mid); margin-bottom: 24px;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 900;
+      line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero h1 span { color: var(--accent-cyan); }
+    .hero p {
+      font-size: 1.05rem; color: var(--mid); line-height: 1.6;
+      max-width: 480px; margin-bottom: 40px; font-weight: 400;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: #facc15; color: #111625;
+      padding: 14px 32px; border-radius: 6px; font-size: 0.95rem; font-weight: 700;
+      text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #eab308; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      padding: 14px 32px; border-radius: 6px; font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; border: 1.5px solid var(--light);
+      text-transform: uppercase; letter-spacing: 0.03em;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    /* FLUID DEVICE SHOWCASE HERO GRAPHIC BLOCK */
+    .hero-visual {
+      position: relative; z-index: 1; display: flex; justify-content: center; align-items: center;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .phone-card {
+      background: linear-gradient(145deg, #f59e0b, #b45309); border-radius: 24px; padding: 36px;
+      box-shadow: -20px 20px 50px rgba(0,0,0,0.5); width: 350px; height: 420px; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden;
+    }
+    /* Fixed Camera modules */
+    .phone-card::before {
+      content: ''; position: absolute; top: 30px; left: 30px; width: 45px; height: 45px; background: rgba(0,0,0,0.85); border-radius: 50%;
+    }
+    .phone-card::after {
+      content: ''; position: absolute; top: 85px; left: 30px; width: 45px; height: 45px; background: rgba(0,0,0,0.85); border-radius: 50%;
     }
     
-    /* Graphic stylized Text Title */
-    .graphic-title-wrap {
-      margin-bottom: 30px;
-    }
-    .graphic-subtitle {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      line-height: 1;
-      background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-orange) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-    .graphic-main-title {
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
-      font-weight: 900;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
-    }
-    .graphic-main-title span {
-      color: var(--accent-orange);
-    }
-
-    .hero-left p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.6;
-      max-width: 480px;
-      margin-bottom: 30px;
-    }
-    .download-btn {
-      display: inline-block;
-      background: #facc15; /* Golden yellow button seen in photo */
-      color: #111625;
-      padding: 14px 36px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .download-btn:hover {
-      transform: translateY(-2px);
-      background: #eab308;
-    }
-
-    /* Floating Showcase Phone Device Graphics right side */
-    .hero-right {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-    .device-showcase-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 380px;
-    }
-    .showcase-phone-img {
-      width: 100%;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: -20px 20px 50px rgba(0,0,0,0.5);
-    }
-    .overlay-promo-text {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 30px;
-      background: linear-gradient(to top, rgba(17,22,37,0.95) 20%, transparent 70%);
-      border-radius: 24px;
-    }
-    .overlay-promo-text h3 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      font-style: italic;
+    .phone-card h3 { 
+      font-weight: 800; font-size: 2.2rem; text-align: left; margin-bottom: 8px; 
+      font-style: italic; line-height: 1.1;
       background: linear-gradient(to right, #cbd5e1, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      position: relative; z-index: 2;
     }
+    .phone-card p, .phone-card .stat-chips, .phone-card .phone-icon { display: none; } /* Kept code but hidden for clean screenshot accuracy */
+    
+    .floating-tag {
+      position: absolute; background: rgba(17,22,37,0.9); border-radius: 8px; padding: 8px 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); font-size: 0.8rem; font-weight: 600;
+      display: flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--white);
+      border: 1px solid var(--light); z-index: 3;
+    }
+    .tag1 { top: 20px; right: 20px; }
+    .tag2 { bottom: 150px; right: -10px; }
 
-    /* 5. HIGH-DENSITY COMMERCIAL VENDOR CATALOG */
-    .catalog-section {
-      padding: 60px 6vw;
+    /* HIGH DENSITY TECH VENDOR GRIDS */
+    .section { padding: 80px 6vw; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 12px;
     }
-    .catalog-header {
-      border-bottom: 1px solid var(--border-dark);
-      padding-bottom: 16px;
-      margin-bottom: 30px;
-    }
-    .catalog-header h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
     }
+    .section-sub { font-size: 1.05rem; color: var(--mid); max-width: 540px; line-height: 1.6; margin-bottom: 56px; }
 
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    .tech-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;
     }
-    .product-card {
-      background: var(--dark-navy);
-      border: 1px solid var(--border-dark);
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.2s, transform 0.2s;
+    .tech-card {
+      background: var(--dark-navy); border-radius: 8px; border: 1px solid var(--light);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s;
     }
-    .product-card:hover {
-      border-color: #475569;
+    .tech-card:hover {
       transform: translateY(-4px);
+      border-color: #475569;
     }
-    .card-img-holder {
-      height: 170px;
-      background: #1e293b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
+    .card-image {
+      width: 100%; height: 170px; background-color: #1e293b;
+      display: flex; align-items: center; justify-content: center; font-size: 3rem;
     }
-    .card-body {
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+    .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+    
+    .card-badge {
+      font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 100px;
+      align-self: flex-start; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .card-cat {
-      font-size: 0.7rem;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: 0.05em;
+    .badge-software { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .badge-hardware { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+    .badge-parts { background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); }
+    
+    .card-title { font-weight: 600; font-size: 0.95rem; color: rgba(255,255,255,0.95); margin-bottom: 8px; min-height: 2.2rem; }
+    .card-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.5; margin-bottom: 20px; }
+    
+    .card-footer { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+    .card-price { font-weight: 700; font-size: 1.1rem; color: var(--white); }
+    
+    .order-btn {
+      background: var(--light); color: white; text-align: center; padding: 12px;
+      border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background 0.2s ease;
     }
-    .card-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 14px;
-      color: rgba(255,255,255,0.95);
-      min-height: 2.5rem;
-    }
-    .card-price-box {
-      margin-top: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .card-price {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-    .cart-btn {
-      background: var(--border-dark);
-      border: none;
-      color: var(--white);
-      width: 34px;
-      height: 34px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .product-card:hover .cart-btn {
-      background: var(--accent-orange);
-    }
+    .tech-card:hover .order-btn { background: var(--accent); }
 
-    /* 6. FLOATING INTEGRATIONS BADGES (PINNED JUST LIKE THE SCREENSHOT) */
-    .google-badge {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: var(--white);
-      color: #1c1c1e;
-      padding: 10px 14px;
-      border-radius: 6px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      z-index: 1000;
-      font-size: 0.75rem;
-      font-weight: 700;
+    /* VISUAL ALIGNMENT STYLING OVERRIDES */
+    .alt-grid-bg { background: var(--bg); }
+    .alt-grid-bg .tech-card { background: var(--dark-navy); }
+
+    /* WHY TRUST US */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .why-list { display: flex; flex-direction: column; gap: 28px; }
+    .why-item { display: flex; gap: 18px; align-items: flex-start; }
+    .why-num {
+      width: 38px; height: 38px; flex-shrink: 0; border-radius: 6px; background: var(--light);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; color: var(--white);
     }
-    .google-badge .stars { color: #f59e0b; font-size: 0.85rem; }
+    .why-item h4 { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; color: var(--white); }
+    .why-item p { font-size: 0.9rem; color: var(--mid); line-height: 1.5; }
+
+    .stats-panel {
+      background: var(--dark-navy); border-radius: 12px; padding: 48px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 36px; border: 1px solid var(--light);
+    }
+    .stat-number {
+      font-weight: 800; font-size: 2.5rem;
+      color: var(--white); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;
+    }
+    .stat-number span { color: var(--accent); }
+    .stat-label { font-size: 0.88rem; color: var(--mid); font-weight: 400; }
+
+    /* REVIEWS SECTION */
+    .reviews-bg { background: var(--bg); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card { background: var(--dark-navy); border-radius: 8px; padding: 32px 28px; border: 1px solid var(--light); }
+    .stars { color: #f59e0b; font-size: 0.95rem; margin-bottom: 16px; }
+    .review-card p { font-size: 0.92rem; color: var(--mid); line-height: 1.6; font-style: italic; margin-bottom: 20px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; font-weight: 600; background: var(--light); color: var(--white);
+    }
+    .reviewer-name { font-weight: 600; font-size: 0.9rem; }
+    .reviewer-title { font-size: 0.8rem; color: var(--mid); }
+
+    /* CONTACT COMPONENT HOOKS */
+    .contact-bg { background: var(--dark-navy); border-top: 1px solid var(--light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px; }
+    .contact-icon { width: 44px; height: 44px; flex-shrink: 0; border-radius: 8px; background: var(--light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .contact-item h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+    .contact-item p { font-size: 0.88rem; color: var(--mid); line-height: 1.4; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-size: 0.85rem; font-weight: 500; color: var(--mid); }
+    .form-field input, .form-field textarea, .form-field select {
+      border: 1.5px solid var(--light); border-radius: 6px; padding: 12px 16px;
+      font-family: inherit; font-size: 0.9rem; color: var(--white); background: var(--bg);
+      outline: none; transition: border-color 0.2s; resize: none;
+    }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--mid); background: var(--dark-navy); }
+    .form-field textarea { min-height: 110px; }
+    .btn-submit {
+      background: #facc15; color: #111625; border: none; padding: 14px 32px; border-radius: 6px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s; align-self: flex-start;
+    }
+    .btn-submit:hover { background: #eab308; transform: translateY(-2px); }
+
+    /* FOOTER DESIGN LAYERS */
+    footer { background: #0b0e17; color: var(--white); padding: 80px 6vw 40px; border-top: 1px solid var(--light); }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .footer-brand .logo { color: var(--white); }
+    .footer-brand p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; margin-top: 14px; font-weight: 300; }
+    .footer-col h5 { font-weight: 700; font-size: 0.9rem; margin-bottom: 18px; color: var(--white); text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--light); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.85rem; color: #475569; }
+
+    /* FLOATING HARDWARE INTEGRATIONS FROM ATTACHMENT */
+    .google-badge {
+      position: fixed; bottom: 20px; left: 20px;
+      background: var(--white); color: #1c1c1e;
+      padding: 10px 14px; border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      display: flex; flex-direction: column; gap: 2px; z-index: 1000;
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .google-badge .stars-inline { color: #f59e0b; font-size: 0.85rem; }
 
     .live-chat-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #1f2937; /* Clean dark gray widget button */
-      color: var(--white);
-      padding: 12px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
-      z-index: 1000;
+      position: fixed; bottom: 20px; right: 20px;
+      background: #1f2937; color: var(--white);
+      padding: 12px 20px; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.5); z-index: 1000;
       border: 1px solid rgba(255,255,255,0.1);
     }
     .live-chat-widget .notification-dot {
-      width: 8px;
-      height: 8px;
-      background: #ef4444;
-      border-radius: 50%;
+      width: 8px; height: 8px; background: #ef4444; border-radius: 50%;
     }
 
-    /* SEARCH DRAWER OVERLAY */
-    .search-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(11,14,23,0.95);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .search-box-container {
-      width: 100%;
-      max-width: 600px;
-      position: relative;
-    }
-    .search-box-container input {
-      width: 100%;
-      background: var(--dark-navy);
-      border: 2px solid var(--border-dark);
-      padding: 16px 20px;
-      border-radius: 8px;
-      color: var(--white);
-      font-family: inherit;
-      font-size: 1.1rem;
-      outline: none;
-    }
-    .close-search {
-      position: absolute;
-      right: 20px;
-      top: -40px;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE LAYOUT RESPONSIVENESS */
-    @media (max-width: 900px) {
-      .hero-banner { grid-template-columns: 1fr; text-align: center; padding: 40px 4vw; }
-      .hero-left p { margin: 0 auto 30px auto; }
-      .hero-right { display: none; }
-      .main-nav { display: none; }
+    /* RESPONSIVE LAYOUT BREAKPOINTS */
+    @media (max-width: 960px) {
+      .mobile-menu-toggle { display: block; }
+      .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      
+      nav .nav-links {
+        display: none; flex-direction: column; position: absolute;
+        top: 100%; left: 0; right: 0; background: var(--dark-navy);
+        padding: 24px; gap: 20px; border-bottom: 1px solid var(--light); text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      }
+      nav .nav-links.active { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .stats-panel { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- 1. TOP ANNOUNCEMENT BAR -->
+<!-- TOP ANNOUNCEMENT STRIP -->
 <div class="top-announcement">
   call or Whatsapp to order 0776766643
 </div>
 
-<!-- 2. MAIN HEADER MODULE -->
-<header>
-  <div class="header-main">
-    <div class="header-left">
-      <button class="search-trigger" onclick="toggleSearch(true)">🔍</button>
-    </div>
-    
-    <!-- Central Brand Identity -->
-    <a class="brand-logo" href="#">
-      <i class="logo-symbol">Ξ</i>XO<span>PI</span>
-    </a>
-
-    <div class="header-right">
-      <a href="#" class="header-icon-btn">👤</a>
-      <a href="#" class="header-icon-btn">👜</a>
+<!-- NAVIGATION BAR STRUCTURE -->
+<nav>
+  <div class="nav-main-bar">
+    <a class="logo" href="#"><i>Ξ</i>SCOPI <span>TECH</span> HUB</a>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <a class="nav-cta" href="#contact">Get Quote</a>
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
     </div>
   </div>
-</header>
-
-<!-- 3. CENTERED CATEGORY NAVIGATION LINK STRIP -->
-<nav class="main-nav">
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Phones <span class="dropdown-arrow">▼</span></a></li>
-    <li><a href="#">Repair Tools <span class="dropdown-arrow">▼</span></a></li>
-    <li><a href="#">Screens <span class="dropdown-arrow">▼</span></a></li>
-    <li><a href="#">Accessories & Gadgets <span class="dropdown-arrow">▼</span></a></li>
-    <li><a href="#">Other Spares <span class="dropdown-arrow">▼</span></a></li>
-    <li><a href="#">Kids Tabs</a></li>
-    <li><a href="#">Flashing Tools</a></li>
-    <li><a href="#">Blog Posts</a></li>
+  
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Hub Services <span class="dropdown-arrow">▼</span></a></li>
+    <li><a href="#spares">Spares & Stock <span class="dropdown-arrow">▼</span></a></li>
+    <li><a href="#about">Why Us <span class="dropdown-arrow">▼</span></a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- 4. HERO BILLBOARD BANNER (MATCHING THE SUBTLE SPLIT LOOK) -->
-<section class="hero-banner">
-  <div class="hero-left">
-    <div class="graphic-title-wrap">
-      <div class="graphic-subtitle">Scopi Hub</div>
-      <h1 class="graphic-main-title">SCO<span>PI</span></h1>
+<!-- HERO HEADER BLOCK -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">
+      <span class="dot"></span> Spares Stocked & Active
     </div>
-    <p>Premium wholesale replacement components, structural screen display modules, and professional device flashing diagnostic activations.</p>
-    <a href="#catalog" class="download-btn">Browse Stock</a>
+    <h1>SCO<span>PI</span><br/><em>TECH</em><br/>HUB</h1>
+    <p>From original replacement screens to direct firmware flashing authorizations—Scopi Tech Hub provides wholesale-grade tech reliability in Kampala.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#services">Explore Services</a>
+      <a class="btn-secondary" href="#spares">Browse Spares</a>
+    </div>
   </div>
   
-  <div class="hero-right">
-    <div class="device-showcase-wrapper">
-      <!-- High-end structural design block matching the promotional screen visual -->
-      <div class="showcase-phone-img" style="background: linear-gradient(145deg, #f59e0b, #b45309); height: 420px; position: relative;">
-        <!-- Camera Lens visual markers -->
-        <div style="position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; background: rgba(0,0,0,0.8); border-radius: 50%;"></div>
-        <div style="position: absolute; top: 100px; left: 30px; width: 60px; height: 60px; background: rgba(0,0,0,0.8); border-radius: 50%;"></div>
-        
-        <div class="overlay-promo-text">
-          <h3>order now and we deliver</h3>
+  <div class="hero-visual">
+    <div class="phone-card">
+      <span class="floating-tag tag1">⚙️ Original Panels</span>
+      <h3>order now and we deliver</h3>
+      <span class="floating-tag tag2">⚡ Live Unlocking Boxes</span>
+    </div>
+  </div>
+</section>
+
+<!-- TECH LAB SERVICES SECTION -->
+<section class="section" id="services">
+  <p class="section-label">Technical Services</p>
+  <h2 class="section-title">Professional Firmware<br/>& System Solutions</h2>
+  <p class="section-sub">Direct hardware diagnostic handling and server-level software optimizations engineered for permanent fixes.</p>
+
+  <div class="tech-grid">
+    <!-- Service Card 1 -->
+    <div class="tech-card">
+      <div class="card-image">🔓</div>
+      <div class="card-content">
+        <span class="card-badge badge-software">Unlocking</span>
+        <h3 class="card-title">Network Unlocking</h3>
+        <p class="card-desc">Permanent server unlocking profiles for global models across Apple, Samsung, Infinix, and Tecno networks.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20inquire%20about%20your%20Network%20Unlocking%20services." class="order-btn" target="_blank">
+            💬 Request Unlocking Order
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Service Card 2 -->
+    <div class="tech-card">
+      <div class="card-image">💾</div>
+      <div class="card-content">
+        <span class="card-badge badge-software">System Support</span>
+        <h3 class="card-title">OS Flashing & Restore</h3>
+        <p class="card-desc">Advanced firmware updates, software bootloop restoration, and system recoveries using direct flashing boxes.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20my%20phone%20is%20stuck.%20I%20need%20OS%20Flashing%20and%20Restore%20support." class="order-btn" target="_blank">
+            💬 Book Flashing Service
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Service Card 3 -->
+    <div class="tech-card">
+      <div class="card-image">🔬</div>
+      <div class="card-content">
+        <span class="card-badge badge-hardware">Hardware Lab</span>
+        <h3 class="card-title">Hardware Diagnostics</h3>
+        <p class="card-desc">Precision component troubleshooting including IC replacements, board repairs, charging port replacements, and soldering.</p>
+        <div class="card-footer">
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20a%20Hardware%20Diagnostic%20on%20my%20faulty%20device." class="order-btn" target="_blank">
+            💬 Consult Tech Expert
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. MAIN VENDOR STOCKS CATALOG -->
-<main class="catalog-section" id="catalog">
-  <div class="catalog-header">
-    <h2>Trending Hardware & Spares</h2>
+<!-- SPARES & ACCESSORIES CATALOG -->
+<section class="section alt-grid-bg" id="spares">
+  <p class="section-label">Premium Catalog</p>
+  <h2 class="section-title">Original Spares & Products</h2>
+  <p class="section-sub">High-grade structural parts, replacement display modules, and charging accessories built to factory specifications.</p>
+
+  <div class="tech-grid">
+    <!-- Catalog Card 1 -->
+    <div class="tech-card">
+      <div class="card-image">📱</div>
+      <div class="card-content">
+        <span class="card-badge badge-parts">Display Panels</span>
+        <h3 class="card-title">Original Screen Replacements</h3>
+        <p class="card-desc">High-clarity complete replacement screen setups and MeToo modules for Infinix, Tecno, Samsung, and iPhones.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 45,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20need%20a%20price%20quote%20for%20an%20Original%20Screen%20Replacement." class="order-btn" target="_blank">
+            ➔ Buy Parts via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Catalog Card 2 -->
+    <div class="tech-card">
+      <div class="card-image">🔋</div>
+      <div class="card-content">
+        <span class="card-badge badge-parts">Power Cells</span>
+        <h3 class="card-title">Replacement Phone Batteries</h3>
+        <p class="card-desc">High-capacity stable internal replacement cells to repair degraded health metrics across all brands.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 30,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I'm%20looking%20for%20a%20Replacement%20Phone%20Battery." class="order-btn" target="_blank">
+            ➔ Buy Parts via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Catalog Card 3 -->
+    <div class="tech-card">
+      <div class="card-image">🔌</div>
+      <div class="card-content">
+        <span class="card-badge badge-parts">Charging</span>
+        <h3 class="card-title">PD Charger Adapters</h3>
+        <p class="card-desc">Intelligent fast power delivery blocks paired with voltage regulation safety to protect custom circuits.</p>
+        <div class="card-footer">
+          <div class="card-price">From UGX 15,000</div>
+          <a href="https://wa.me/256759793746?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20order%20a%20PD%20Charger%20Adapter." class="order-btn" target="_blank">
+            ➔ Buy Parts via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="catalog-grid">
-    <!-- Component Stock Item 1 -->
-    <div class="product-card">
-      <div class="card-img-holder">📱</div>
-      <div class="card-body">
-        <span class="card-cat">Screens</span>
-        <h3 class="card-title">MeToo Premium LCD Assembly Module (Infinix/Tecno)</h3>
-        <div class="card-price-box">
-          <span class="card-price">UGX 45,000</span>
-          <button class="cart-btn">➔</button>
+<!-- WHY US SECTION -->
+<section class="section" id="about">
+  <div class="why-grid">
+    <div>
+      <p class="section-label">Why Choose Scopi</p>
+      <h2 class="section-title">Built on Precision<br/>& True Tech Skill</h2>
+      <p class="section-sub">We align specialized laboratory repair standards with direct source pricing formats to ensure absolute device security.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Verified Structural Spares</h4>
+            <p>Every single LCD, tracking flex cable, or internal module undergoes strict diagnostic performance confirmation tests.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Authorized Box Operations</h4>
+            <p>We work directly with raw firmware tools to restore devices safely without risk of hard-bricking errors.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Component Stock Item 2 -->
-    <div class="product-card">
-      <div class="card-img-holder">🛠️</div>
-      <div class="card-body">
-        <span class="card-cat">Software Parts</span>
-        <h3 class="card-title">Universal Phone Firmware OS Flashing Authorization File</h3>
-        <div class="card-price-box">
-          <span class="card-price">Inquire Rate</span>
-          <button class="cart-btn">➔</button>
+    <div>
+      <div class="stats-panel">
+        <div class="stat">
+          <div class="stat-number">100<span>%</span></div>
+          <div class="stat-label">Authentic Parts Priority</div>
         </div>
-      </div>
-    </div>
-
-    <!-- Component Stock Item 3 -->
-    <div class="product-card">
-      <div class="card-img-holder">🔋</div>
-      <div class="card-body">
-        <span class="card-cat">Power Cells</span>
-        <h3 class="card-title">High Capacity Internal Replacement Phone Battery Pack</h3>
-        <div class="card-price-box">
-          <span class="card-price">UGX 30,000</span>
-          <button class="cart-btn">➔</button>
+        <div class="stat">
+          <div class="stat-number">4.9<span>★</span></div>
+          <div class="stat-label">Client Repair Rating</div>
         </div>
       </div>
     </div>
   </div>
-</main>
+</section>
 
-<!-- 6. LIVE FLOATING BADGES AND CHAT OVERLAYS -->
+<!-- REVIEWS -->
+<section class="section reviews-bg" id="reviews">
+  <p class="section-label">Tech Feedback</p>
+  <h2 class="section-title">Trusted By the Tech Community</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"They fixed a persistent bootloop fault on my Infinix using authentic factory flashing systems. Exceptional knowledge."</p>
+      <div class="reviewer"><div class="reviewer-avatar">DM</div><div><div class="reviewer-name">David M.</div><div class="reviewer-title">Kampala</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"The original screen replacement module for my phone fits flawlessly and color reproduction is identical to stock specs."</p>
+      <div class="reviewer"><div class="reviewer-avatar">JN</div><div><div class="reviewer-name">Joan N.</div><div class="reviewer-title">Wandegeya</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Fast, completely transparent repair updates and fair wholesale rates for verified electronic spares parts."</p>
+      <div class="reviewer"><div class="reviewer-avatar">RK</div><div><div class="reviewer-name">Ronald K.</div><div class="reviewer-title">Ntinda</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section contact-bg" id="contact">
+  <p class="section-label">Connect Instantly</p>
+  <h2 class="section-title">Submit a Part or<br/>Repair Specification</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Hub Location</h4>
+          <p>Kampala, Uganda<br/>Input your precise store address here</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Tech Hotline / WhatsApp</h4>
+          <p>+256 759 793 746<br/>Monday – Saturday: 9am – 8pm</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-field"><label>Your Name</label><input type="text" id="clientName" placeholder="e.g. Alex" /></div>
+          <div class="form-field"><label>Phone Number</label><input type="tel" id="clientPhone" placeholder="+256..." /></div>
+        </div>
+        <div class="form-field">
+          <label>Requirement Category</label>
+          <select id="clientService">
+            <option>Original Replacement Screen</option>
+            <option>Firmware OS Flashing</option>
+            <option>Network/Carrier Unlocking</option>
+            <option>Hardware Diagnostic Repair</option>
+            <option>Bulk Parts Order</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Device Model & Issue Details</label><textarea id="clientMessage" placeholder="Provide device name and full technical request parameters..."></textarea></div>
+        <button class="btn-submit" onclick="sendFormToWhatsApp()">Submit Order via WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIXED HARDWARE INTEGRATIONS FROM ATTACHMENT -->
 <div class="google-badge">
-  <span>G 4.6 ★★★★★</span>
+  <span>G 4.6 <span class="stars-inline">★★★★★</span></span>
   <span style="color: #64748b; font-size: 0.65rem; font-weight: 500;">39 Reviews</span>
 </div>
 
 <a href="https://wa.me/256759793746" target="_blank" class="live-chat-widget">
-  <span>💬</span> Live chat <span class="notification-dot"></span>
+  <span class="notification-dot"></span> Live chat 💬
 </a>
 
-<!-- SEARCH LAYER INTERACTION DRAWER -->
-<div class="search-overlay" id="searchDrawer">
-  <div class="search-box-container">
-    <button class="close-search" onclick="toggleSearch(false)">✕ Close</button>
-    <input type="text" placeholder="Type name of spare part, screen module or tool...">
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a class="logo" href="#"><i>Ξ</i>SCOPI <span>TECH</span> HUB</a><p>Your ultimate workspace solution for premium phone parts and high-end software operations in Uganda.</p></div>
+    <div class="footer-col"><h5>Tech Services</h5><ul><li><a href="#services">Network Unlock</a></li><li><a href="#services">System Flashing</a></li><li><a href="#services">Lab Diagnostics</a></li></ul></div>
+    <div class="footer-col"><h5>Catalog Stocks</h5><ul><li><a href="#spares">Original Screens</a></li><li><a href="#spares">Batteries</a></li><li><a href="#spares">PD Fast Chargers</a></li></ul></div>
+    <div class="footer-col"><h5>Corporate</h5><ul><li><a href="#about">About Hub</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></div>
   </div>
-</div>
+  <div class="footer-bottom"><p>© 2026 Scopi Tech Hub. All rights reserved.</p><p>Crafted in Uganda</p></div>
+</footer>
 
 <script>
-  function toggleSearch(show) {
-    document.getElementById('searchDrawer').style.display = show ? 'flex' : 'none';
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  function sendFormToWhatsApp() {
+    const businessNumber = "256759793746";
+    const name = document.getElementById('clientName').value.trim();
+    const phone = document.getElementById('clientPhone').value.trim();
+    const service = document.getElementById('clientService').value;
+    const message = document.getElementById('clientMessage').value.trim();
+
+    if(!name || !message) {
+      alert("Please provide your name and structural device requirements.");
+      return;
+    }
+
+    const textPayload = `Hello Scopi Tech Hub!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Type:* ${encodeURIComponent(service)}%0A*Device Info:* ${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/${businessNumber}?text=${textPayload}`, '_blank');
   }
 </script>
 
