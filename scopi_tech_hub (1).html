@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SCOPI TECH HUB | Expert Phone Repair & Accessories Kampala</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Scopi Tech Hub in Kampala, Uganda provides expert phone software repairs, network unlocking, firmware flashing, and genuine mobile accessories. Fast turnaround guaranteed." />
+  <meta name="keywords" content="phone repair Kampala, software unlocking Uganda, Scopi Tech Hub, flash Infinix Kampala, phone accessories Uganda, fix bricked phone Kampala" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Tags (For sharing links on WhatsApp/Social Media) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SCOPI TECH HUB | Phone Repair & Accessories" />
+  <meta property="og:description" content="Expert phone software repairs, network unlocking, and genuine accessories in Kampala, Uganda." />
+  <meta property="og:url" content="https://yourusername.github.io/your-repository-name/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SCOPI TECH HUB</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
+  /* Mobile Menu Styles */
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  @media (max-width: 960px) {
+    .mobile-menu-toggle { display: block; }
+    
+    nav .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: rgba(247,245,242,0.98);
+      backdrop-filter: blur(14px);
+      padding: 20px;
+      gap: 20px;
+      border-bottom: 1px solid var(--light);
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    
+    nav .nav-links.active {
+      display: flex;
+    }
+  }
   :root {
     --bg: #f7f5f2;
     --white: #ffffff;
@@ -28,7 +75,28 @@
     color: var(--ink);
     overflow-x: hidden;
   }
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
+  // Toggle mobile menu open/closed
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Change icon between hamburger (☰) and close (✕)
+    menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  // Automatically update footer copyright to 2026
+  document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Scopi Tech Hub. All rights reserved.`;
+</script>
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -476,6 +544,18 @@
 
 <!-- NAV -->
 <nav>
+  <a class="logo" href="#">SCOPI <span>TECH</span> HUB</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Accessories</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <a class="nav-cta" href="#contact">Get a Quote</a>
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+  </div>
+</nav>
   <a class="logo" href="#">SCOPI <span>TECH</span> HUB</a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
