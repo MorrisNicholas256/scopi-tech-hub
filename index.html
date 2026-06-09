@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Scopi Tech Hub provides professional tech solutions including web development and software services in Uganda.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SCOPI TECH HUB</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0b0e17;              /* Deep technical background */
+    --dark-navy: #111625;        /* Premium structural surface color */
+    --white: #ffffff;
+    --ink: #ffffff;
+    --mid: #94a3b8;             /* Muted scannable slate text */
+    --light: #1e293b;           /* Clean dark structural borders */
+    --accent: #f97316;          /* Precise brand orange */
+    --accent-cyan: #06b6d4;     /* Tech brand cyan accent */
+    --card: #111625;
+    --top-bar-bg: #f5f5f7;      /* Clean high-contrast announcement canvas */
+    --radius: 16px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TOP ANNOUNCEMENT STRIP */
+  .top-announcement {
+    background: var(--top-bar-bg);
+    color: #1c1c1e;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    width: 100%;
+    z-index: 101;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; flex-direction: column;
+    background: var(--dark-navy);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .nav-main-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 6vw 10px 6vw;
+    width: 100%;
+    position: relative;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  
+  .nav-links {
+    display: flex; justify-content: center; gap: 36px; list-style: none;
+    padding: 15px 20px 20px 20px; width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+  }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.75);
+    text-decoration: none; letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  
+  .nav-cta {
+    background: #facc15; color: #111625;
+    padding: 10px 22px; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: #eab308; transform: translateY(-1px); }
+
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--white);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    padding: 60px 6vw;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark-navy);
+  }
+  .hero-text { position: relative; z-index: 1; animation: fadeUp 0.9s ease both; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--light);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500; color: var(--mid);
+    margin-bottom: 24px;
+  }
+  .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p {
+    font-size: 1.05rem; color: var(--mid); line-height: 1.6;
+    max-width: 480px; margin-bottom: 40px;
+    font-weight: 400;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: #facc15; color: #111625;
+    padding: 14px 32px; border-radius: 6px;
+    font-size: 0.95rem; font-weight: 700;
+    text-decoration: none; text-transform: uppercase; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #eab308; transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 14px 32px; border-radius: 6px;
+    font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border: 1.5px solid var(--light);
+    text-transform: uppercase; letter-spacing: 0.03em;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--white); transform: translateY(-2px); }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+  .phone-card {
+    background: linear-gradient(145deg, #f59e0b, #b45309);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: -20px 20px 50px rgba(0,0,0,0.5);
+    width: 350px;
+    height: 420px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .phone-card::before {
+    content: ''; position: absolute; top: 30px; left: 30px; width: 45px; height: 45px; background: rgba(0,0,0,0.85); border-radius: 50%;
+  }
+  .phone-card::after {
+    content: ''; position: absolute; top: 85px; left: 30px; width: 45px; height: 45px; background: rgba(0,0,0,0.85); border-radius: 50%;
+  }
+  .phone-icon { display: none; }
+  .phone-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 2.2rem;
+    text-align: left; margin-bottom: 8px;
+    font-style: italic; line-height: 1.1;
+    background: linear-gradient(to right, #cbd5e1, #ffffff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    position: relative; z-index: 2;
+  }
+  .phone-card p { display: none; }
+  .stat-chips { display: none; }
+  
+  .floating-tag {
+    position: absolute;
+    background: rgba(17,22,37,0.9);
+    border-radius: 8px;
+    padding: 8px 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    font-size: 0.8rem; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap;
+    color: var(--white);
+    border: 1px solid var(--light);
+    z-index: 3;
+  }
+  .tag1 { top: 20px; right: 20px; }
+  .tag2 { bottom: 150px; right: -10px; }
+
+  /* SERVICES */
+  .section {
+    padding: 80px 6vw;
+  }
+  .section-label {
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent-cyan); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800; letter-spacing: -0.02em;
+    line-height: 1.15; margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--mid); max-width: 540px;
+    line-height: 1.6; font-weight: 400; margin-bottom: 56px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--dark-navy);
+    border-radius: 8px;
+    padding: 36px 30px;
+    border: 1px solid var(--light);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: #475569;
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+  }
+  .icon-red { background: rgba(239, 68, 68, 0.15); }
+  .icon-blue { background: rgba(37, 99, 235, 0.15); }
+  .icon-green { background: rgba(16, 185, 129, 0.15); }
+  
+  .service-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.95);
+  }
+  .service-card p {
+    font-size: 0.88rem; color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    margin-top: auto;
+    background: var(--light); color: white; text-align: center; padding: 12px;
+    border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s ease;
+  }
+  .service-card:hover .service-link { background: var(--accent); }
+
+  /* PRODUCTS */
+  .products-bg { background: var(--bg); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--dark-navy);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid var(--light);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s;
+    cursor: pointer;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: #475569;
+  }
+  .product-emoji { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+  .product-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  .product-card p { font-size: 0.82rem; color: var(--mid); margin-bottom: 14px; }
+  .product-price {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    color: var(--white);
+  }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .why-list { display: flex; flex-direction: column; gap: 28px; }
+  .why-item { display: flex; gap: 18px; align-items: flex-start; }
+  .why-num {
+    width: 38px; height: 38px; flex-shrink: 0;
+    border-radius: 6px; background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.85rem; color: var(--white);
+  }
+  .why-item h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 1.05rem; margin-bottom: 4px;
+    color: var(--white);
+  }
+  .why-item p { font-size: 0.9rem; color: var(--mid); line-height: 1.5; }
+
+  .stats-panel {
+    background: var(--dark-navy);
+    border-radius: 12px;
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    border: 1px solid var(--light);
+  }
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 2.5rem;
+    color: var(--white); letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-number span { color: var(--accent); }
+  .stat-label { font-size: 0.88rem; color: var(--mid); font-weight: 400; }
+
+  /* TESTIMONIALS */
+  .testimonials-bg { background: var(--bg); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--dark-navy);
+    border-radius: 8px;
+    padding: 32px 28px;
+    border: 1px solid var(--light);
+  }
+  .stars { color: #f59e0b; font-size: 0.95rem; margin-bottom: 16px; }
+  .testimonial-card p {
+    font-size: 0.92rem; color: var(--mid);
+    line-height: 1.6; font-style: italic;
+    margin-bottom: 20px;
+  }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.95rem; font-weight: 600;
+    background: var(--light); color: var(--white);
+  }
+  .reviewer-name { font-weight: 600; font-size: 0.9rem; }
+  .reviewer-title { font-size: 0.8rem; color: var(--mid); }
+
+  /* CONTACT */
+  .contact-bg { background: var(--dark-navy); border-top: 1px solid var(--light); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .contact-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: 8px; background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .contact-item h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+  .contact-item p { font-size: 0.88rem; color: var(--mid); line-height: 1.4; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field label { font-size: 0.85rem; font-weight: 500; color: var(--mid); }
+  .form-field input, .form-field textarea, .form-field select {
+    border: 1.5px solid var(--light);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--white);
+    background: var(--bg);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+    border-color: var(--mid);
+    background: var(--dark-navy);
+  }
+  .form-field textarea { min-height: 110px; }
+  .btn-submit {
+    background: #facc15; color: #111625;
+    border: none; padding: 14px 32px; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+  .btn-submit:hover { background: #eab308; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: #0b0e17; color: var(--white);
+    padding: 80px 6vw 40px; border-top: 1px solid var(--light);
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 56px;
+  }
+  .footer-brand .logo { color: var(--white); }
+  .footer-brand p {
+    font-size: 0.88rem; color: var(--mid);
+    line-height: 1.6; margin-top: 14px;
+    font-weight: 300;
+  }
+  .footer-col h5 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    margin-bottom: 18px; color: var(--white);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col ul a {
+    font-size: 0.88rem; color: var(--mid);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid var(--light);
+    padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 0.85rem; color: #475569; }
+
+  /* FLOATING FIXED LAYERS */
+  .google-badge {
+    position: fixed; bottom: 20px; left: 20px;
+    background: var(--white); color: #1c1c1e;
+    padding: 10px 14px; border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    display: flex; flex-direction: column; gap: 2px; z-index: 1000;
+    font-size: 0.75rem; font-weight: 700;
+  }
+  .google-badge .stars-inline { color: #f59e0b; font-size: 0.85rem; }
+
+  .live-chat-widget {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #1f2937; color: var(--white);
+    padding: 12px 20px; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 0.85rem;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.5); z-index: 1000;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .live-chat-widget .notification-dot {
+    width: 8px; height: 8px; background: #ef4444; border-radius: 50%;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .mobile-menu-toggle { display: block; }
+    .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    
+    nav .nav-links {
+      display: none; flex-direction: column; position: absolute;
+      top: 100%; left: 0; right: 0; background: var(--dark-navy);
+      padding: 24px; gap: 20px; border-bottom: 1px solid var(--light); text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    nav .nav-links.active { display: flex; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .stats-panel { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP ANNOUNCEMENT STRIP -->
+<div class="top-announcement">
+  call or Whatsapp to order 0759793746
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-main-bar">
+    <a class="logo" href="#">SCOPI <span>TECH</span> HUB</a>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <a class="nav-cta" href="#contact">Get Quote</a>
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </div>
+  
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Accessories</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">
+      <span class="dot"></span> Open & Ready to Repair
+    </div>
+    <h1>Your Phone,<br/><em>Fixed Fast.</em><br/>Stocked Right.</h1>
+    <p>Expert phone software repairs, genuine accessories, and everything your device needs — all under one roof at Scopi Tech Hub.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#services">Our Services</a>
+      <a class="btn-secondary" href="#contact">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="phone-card">
+      <span class="floating-tag tag1">🔧 Repair in 1hr</span>
+      <h3>order now and we deliver</h3>
+      <span class="floating-tag tag2">✅ Warranty Included</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Expert Services<br/>You Can Trust</h2>
+  <p class="section-sub">From software unlocking to full OS restoration — we handle it all with speed, precision, and a satisfaction guarantee.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon icon-red">🔓</div>
+      <h3>Software Unlocking</h3>
+      <p>Network unlock any phone — iPhone, Samsung, Tecno, Infinix, and more. Fast, safe, and permanent.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20inquire%20about%20your%20Software%20Unlocking%20services." target="_blank">Book now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-blue">💾</div>
+      <h3>OS Flashing & Restore</h3>
+      <p>Bricked phone? We flash firmware, restore factory software, and recover your device like new.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20my%20phone%20is%20stuck.%20I%20need%20OS%20Flashing%20and%20Restore%20support." target="_blank">Book now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-green">🛡️</div>
+      <h3>Virus & Malware Removal</h3>
+      <p>Deep-clean your phone from spyware, bloatware, and malicious apps affecting performance.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I'd%20like%20to%20book%20a%20Virus%20and%20Malware%20Removal%20service." target="_blank">Book now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-blue">📲</div>
+      <h3>App Installation & Setup</h3>
+      <p>Premium app installs, Google Play fixes, account setup, and full device configuration.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20need%20help%20with%20App%20Installation%20and%20Setup." target="_blank">Book now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-red">🔄</div>
+      <h3>Data Backup & Transfer</h3>
+      <p>Safely migrate contacts, photos, and files between devices with zero data loss.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I'm%20looking%20to%20do%20a%20Data%20Backup%20and%20Transfer." target="_blank">Book now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-green">⚙️</div>
+      <h3>Performance Optimization</h3>
+      <p>Speed up sluggish phones — clear system junk, optimize RAM, and extend battery life.</p>
+      <a class="service-link" href="https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20my%20phone%20is%20slow.%20I%20need%20Performance%20Optimization." target="_blank">Book now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-bg" id="products">
+  <p class="section-label">Accessories</p>
+  <h2 class="section-title">Top Picks in Store</h2>
+  <p class="section-sub">Quality accessories for every phone and every budget. All products tested and verified.</p>
+
+  <div class="products-grid">
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Charging%20Cables.',%20'_blank')">
+      <span class="product-emoji">🔋</span>
+      <h4>Charging Cables</h4>
+      <p>USB-C, Lightning & Micro USB</p>
+      <div class="product-price">From UGX 5,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Earphones%20and%20Buds.',%20'_blank')">
+      <span class="product-emoji">🎧</span>
+      <h4>Earphones & Buds</h4>
+      <p>Wired & wireless options</p>
+      <div class="product-price">From UGX 15,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Charger%20Adapters.',%20'_blank')">
+      <span class="product-emoji">🔌</span>
+      <h4>Charger Adapters</h4>
+      <p>Fast charge & standard</p>
+      <div class="product-price">From UGX 10,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Screen%20Protectors.',%20'_blank')">
+      <span class="product-emoji">🛡️</span>
+      <h4>Screen Protectors</h4>
+      <p>Tempered glass, all models</p>
+      <div class="product-price">From UGX 8,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Phone%20Cases.',%20'_blank')">
+      <span class="product-emoji">📦</span>
+      <h4>Phone Cases</h4>
+      <p>Silicone, leather & hard-shell</p>
+      <div class="product-price">From UGX 12,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Power%20Banks.',%20'_blank')">
+      <span class="product-emoji">🔋</span>
+      <h4>Power Banks</h4>
+      <p>10,000mAh – 30,000mAh</p>
+      <div class="product-price">From UGX 45,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Bluetooth%20Speakers.',%20'_blank')">
+      <span class="product-emoji">📡</span>
+      <h4>Bluetooth Speakers</h4>
+      <p>Portable & mini-series</p>
+      <div class="product-price">From UGX 35,000</div>
+    </div>
+    <div class="product-card" onclick="window.open('https://wa.me/256776766643?text=Hello%20Scopi%20Tech%20Hub,%20I%20want%20to%20buy%20Phone%20Holders.',%20'_blank')">
+      <span class="product-emoji">🖥️</span>
+      <h4>Phone Holders & Stands</h4>
+      <p>Car mounts, desk & ring stands</p>
+      <div class="product-price">From UGX 7,000</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="why-grid">
+    <div>
+      <p class="section-label">Why Scopi Tech Hub</p>
+      <h2 class="section-title">Built on Trust &<br/>Technical Skill</h2>
+      <p class="section-sub">We combine hands-on expertise with genuine care for your device — no guesswork, no shortcuts.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Certified Technicians</h4>
+            <p>Our team has years of hands-on experience repairing and unlocking all major phone brands.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Fast Turnaround</h4>
+            <p>Most software repairs are completed within the same day — often within the hour.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden fees. We tell you the cost upfront before we touch your device.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Repair Warranty</h4>
+            <p>Every repair comes with a warranty. If the issue recurs, we fix it for free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="stats-panel">
+        <div class="stat">
+          <div class="stat-number">500<span>+</span></div>
+          <div class="stat-label">Phones Repaired</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4.9<span>★</span></div>
+          <div class="stat-label">Customer Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3<span>yrs</span></div>
+          <div class="stat-label">In Business</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">98<span>%</span></div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-bg" id="reviews">
+  <p class="section-label">Customer Reviews</p>
+  <h2 class="section-title">What Our Clients Say</h2>
+  <p class="section-sub">Real feedback from real customers who trusted us with their devices.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"They unlocked my Samsung in under 30 minutes. Friendly service and very affordable. Will always come back!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">AK</div>
+        <div>
+          <div class="reviewer-name">Aisha K.</div>
+          <div class="reviewer-title">Kampala</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"My phone was completely dead after a failed update. Scopi Tech Hub restored it perfectly. Excellent work!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">BO</div>
+        <div>
+          <div class="reviewer-name">Brian O.</div>
+          <div class="reviewer-title">Entebbe</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Best place to get phone accessories in the area. Quality products and great prices. Highly recommended!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">PM</div>
+        <div>
+          <div class="reviewer-name">Patricia M.</div>
+          <div class="reviewer-title">Mukono</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <p class="section-label">Get In Touch</p>
+  <h2 class="section-title">Visit Us or<br/>Send a Message</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Our Location</h4>
+          <p>Kampala, Uganda<br/>Update with your exact address</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Call / WhatsApp</h4>
+          <p>+256 759 793 746<br/>Mon – Sat, 9am – 8pm</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email Us</h4>
+          <p>scopitechhub@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <h4>Working Hours</h4>
+          <p>Monday – Saturday: 9:00 AM – 8:00 PM<br/>Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" id="clientName" placeholder="e.g. John Doe" />
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" id="clientPhone" placeholder="+256 700 000 000" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Service Needed</label>
+          <select id="clientService">
+            <option>Software Unlocking</option>
+            <option>OS Flashing & Restore</option>
+            <option>Virus Removal</option>
+            <option>Data Backup & Transfer</option>
+            <option>Performance Optimization</option>
+            <option>Buy Accessories</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea id="clientMessage" placeholder="Describe your phone issue or what you need…"></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendFormToWhatsApp()">Send Message via WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIXED FLOATING BADGES -->
+<div class="google-badge">
+  <span>G 4.6 <span class="stars-inline">★★★★★</span></span>
+  <span style="color: #64748b; font-size: 0.65rem; font-weight: 500;">39 Reviews</span>
+</div>
+
+<a href="https://wa.me/256759793746" target="_blank" class="live-chat-widget">
+  <span class="notification-dot"></span> Live chat 💬
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="#">SCOPI <span>TECH</span> HUB</a>
+      <p>Your trusted partner for phone software repair and quality accessories in Uganda.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Software Unlocking</a></li>
+        <li><a href="#services">OS Flashing</a></li>
+        <li><a href="#services">Virus Removal</a></li>
+        <li><a href="#services">Data Transfer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#products">Cables & Chargers</a></li>
+        <li><a href="#products">Earphones</a></li>
+        <li><a href="#products">Phone Cases</a></li>
+        <li><a href="#products">Power Banks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Scopi Tech Hub. All rights reserved.</p>
+    <p>Made with ❤️ in Uganda</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile navigation handler interaction logic
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  // Contact payload execution router
+  function sendFormToWhatsApp() {
+    const businessNumber = "256759793746";
+    const name = document.getElementById('clientName').value.trim();
+    const phone = document.getElementById('clientPhone').value.trim();
+    const service = document.getElementById('clientService').value;
+    const message = document.getElementById('clientMessage').value.trim();
+
+    if(!name || !message) {
+      alert("Please provide your name and details of your request.");
+      return;
+    }
+
+    const textPayload = `Hello Scopi Tech Hub!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Message Details:* ${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/${businessNumber}?text=${textPayload}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
